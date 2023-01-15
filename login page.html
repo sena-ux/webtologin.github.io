@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>java sesi 5</title>
+<style type="text/css">
+body {
+    background-color: #517fa8;
+    
+}
+
+ #login {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background-color: #0c2c61;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 15%;
+    height: 300px;
+    border-radius: 50px;
+    opacity: 0.9;
+    box-shadow: -0px 20px 2px rgba(0,0.5,0,0.5);
+}
+
+.login {
+    justify-content: center;
+    align-items: center;
+    
+}
+.judul {
+    margin: 10px;
+    padding: 20px;
+}
+.isi {
+    margin: 0px;
+}
+
+  .page {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+  }
+
+  .tombol {
+    width: 210px;
+    height: 30px;
+    background: orange;
+  }
+
+  .tombol:hover {
+    background: #61522a;
+  }
+  
+</style>
+
+<link href="Arsha/logo sena.png" rel="icon">
+</head>
+
+<body>
+        <div id="login">
+      <!--<form action="../Arsha/index.html" method="get" accept-charset="utf-8" class="login">-->
+          <div class="isi">
+              <h1 class="judul">Belajar Membuat Login Page</h1>
+      <input type="text" placeholder="username" id="username" value="" class="page" autocomplete="off" /><br><br>
+
+      <input type="password" placeholder="password" id="password" class="page" /><br><br>
+
+      <button onclick="Login()" class="tombol" id="button">Login</button><br><br>
+      
+      
+         <h1 id="benar" style="color: rgb(94, 255, 0);">Username And Password Benar</h1>
+         
+      <h1 id="salah" style="color: red;">Username/Password Salah Silahkan Klik Reload</h1>
+      
+<!--      <button onclick="salah()" id="kembali" class="tombol">KEMBAlI</button></h1>-->
+<!--<h1 id="andaBenar" style="color: red;">ini isi website</h1>-->
+    <form action="../Arsha/index.html" method="get" accept-charset="utf-8">
+        <button onclick="next()" id="next" class="tombol" >Next</button>
+    </form>
+      <button onclick="keluar()" id="logout" class="tombol" >Reload</button>
+      
+      
+          </div>
+          
+      <!--</form>-->
+      
+    </div>
+  
+      
+    
+
+
+  <script type="text/javascript" charset="utf-8">
+    // alert("ok");
+    let logout = document.getElementById('logout');
+    let button = document.getElementById('button');
+    let login = document.getElementById('login');
+
+    let benar = document.getElementById('benar');
+    let salah = document.getElementById('salah');
+    
+    benar.style.display = "none";
+    salah.style.display = "none";
+    logout.style.display = "none";
+    next.style.display = "none";
+    judul.style.display = "block";
+    username.style.display = "block";
+    password.style.display = "block";
+    button.style.display = "block";
+
+        
+    function Login() {
+        
+        if(username.value == localStorage.getItem("username") && password.value == localStorage.getItem("password")) {
+            localStorage.setItem("user", username.value), localStorage.setItem("pass", password.value)
+            
+            next.style.display = "block";
+            benar.style.display = "block";
+            judul.style.display = "none";
+            username.style.display = "none";
+            password.style.display = "none";
+            button.style.display = "none";
+            salah.style.display = "none";
+            
+        }else{
+            // location.reload();
+            
+            
+            logout.style.display = "block";
+            salah.style.display = "block";
+            button.style.display = "none";
+            // username.style.display = "none";
+            // password.style.display = "none";
+            // judul.style.display = "none";
+            // benar.style.display = "none";
+        }
+        if(localStorage.getItem("user") && localStorage.getItem("pass")){
+            login.style.display = "block";
+            judul.style.display = "none";
+            username.style.display = "none";
+            password.style.display = "none"
+            button.style.display = "none";
+            benar.style.display = "block";
+            logout.style.display = "block";
+        }
+    }
+        function keluar(){
+            location.reload();
+        }
+        
+    
+
+
+
+//     function Login() {
+    //     alert(username.value)
+    //     alert(password)
+    // }
+
+    //   console.log(masuk);
+    //   alert(username.value);
+    //   alert(password.value);
+
+//       localStorage.setItem("username", username.value);
+      
+
+
+//       if (username.value == "12345678" && password.value == "12345678") {
+//         logout.style.display = "block";
+//         // alert("berhasil login");
+//         // localStorage.setItem("Q/pencarian/nama", "value/nilai"/jika sudah punya value bisa langsung dimasukkan)
+//         localStorage.setItem("role", "benar");
+//         judul.style.display = "none"
+//         username.style.display = "none";
+//         password.style.display = "none";
+//         button.style.display = "none";
+//         salah.style.display = "none";
+//         benar.style.display = "block";
+//       } else {
+//         // alert("password salah");
+//         localStorage.setItem("role", "salah");
+//         logout.style.display = "block";
+//         judul.style.display = "none"
+//         username.style.display = "none";
+//         password.style.display = "none";
+//         button.style.display = "none";
+
+//         benar.style.display = "none";
+//         salah.style.display = "block";
+
+
+//     }
+// }
+
+//       if (localStorage.getItem("username")) {
+//         judul.style.display = "none"
+//         username.style.display = "none";
+//         password.style.display = "none";
+//         button.style.display = "none";
+//         // benar.style.display = "block";
+//         logout.style.display = "block";
+        
+      
+//       if (localStorage.getItem('role') == "benar") {
+//         salah.style.display = "none";
+//         benar.style.display = "block";
+//       }else {
+//         benar.style.display = "none";
+//         salah.style.display = "block";
+//       }
+
+//       }
+//       function keluar(){
+//       alert("cctv");
+
+//       localStorage.clear();
+//       location.reload();
+//       }
+    //   function keluar() {
+    //     alert("sena")
+    //   localStorage.clear();
+    //   location.reload();
+    // }
+
+    // function logout() {
+    //   localStorage.clear();
+    //   location.reload();
+    // }
+    
+  </script>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+html {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: blue;
+    color: white;
+    font-family: roboto, Sans-Serif;
+}
+.concent{
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 12%;
+    display: block;
+    background-color: green;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    box-shadow: -0.5px 30px 10px rgba(0,1,0,0.5);
+}
+
+
+
+ #login {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+  .page {
+    width: 200px;
+    height: 30px;
+  }
+
+  .tombol {
+    width: 210px;
+    height: 30px;
+    background: orange;
+  }
+
+  .tombol:hover {
+    background: #61522a;
+  }

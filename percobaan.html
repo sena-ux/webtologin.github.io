@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+    
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        width,height: 100vh;
+        background-color: blue;
+    }
+    .concent {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 25%;
+        padding: 10px;
+        background-color: green;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+        box-shadow: -0.5px 30px 10px rgba(0,1,0,0.5);
+    }
+    .concent h1 {
+        width: 100%;
+        background-color: tomato;
+    }
+    .concent form {
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 1px;
+    margin-top: 5px;
+    
+    
+}
+.concent form div {
+    margin-top: 20px;
+}
+.concent form input {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.concent form input label {
+    background-color: black;
+}
+input:invalid, input:required:invalid {
+    border: none;
+    outline: 2px solid red;
+    border-radius: 3px;
+}
+input:valid, input:required {
+    border: 1px solid black;
+    outline: inherit;
+    border-radius: inherit;
+}
+.tombol {
+    width: 100%;
+    height: 50px;
+    background: orange;
+  }
+        
+    </style>
+    <link href="Arsha/logo sena.png" rel="icon">
+    
+</head>
+<body>
+    <!--../Arsha/index.html-->
+    <div class="concent">
+        <marquee><h1>SILAHKAN REGISTER</h1></marquee>
+            <form action="login page.html" method="post" autocomplete="off" autofocus id="regis" >
+                <div>
+                    <label for="NAMA">MASUKKAN NAMA</label>
+                    <input type="nama" name="NAMA" id="NAMA" value="" required minlenght="2" maxlength="10"/>
+                </div>
+                
+                <div>
+                    <label for="email">MASUKKAN EMAIL</label>
+                    <input type="email" name="email" id="email" value="" required/>
+                </div>
+                
+                <div>
+                    <label for="PASSWORD">MASUKKAN PASSWORD</label>
+                    <input type="password" name="PASSWORD" id="PASSWORD" value="" required/>
+                </div>
+                
+                <div>
+                    <label for="nomor">MASUKKAN NO HP</label>
+                    <input type="tel" name="nomor" id="nomor" value="" required />
+                </div>
+                
+                <div>
+                    <label for="web">MASUKKAN URL</label>
+                    <input type="url" name="web" id="web" value="" required />
+                </div>
+                
+                <div>
+                    <label for="angka">MASUKKAN ANGKA</label>
+                    <input type="number" name="angka" id="angka" value="" min="5" max="10" step="2" />
+                </div>
+                
+                <div>
+                    <label for="slider">MASUKKAN ANGKA</label>
+                    <input type="range" name="slider" id="slider" value="" />
+                </div>
+                
+                <div>
+                    <label for="tanggal">MASUKKAN URL</label>
+                    <input type="date" name="tanggal" id="tanggal" value="" required />
+                </div>
+                
+                <div>
+                    <label for="warna">MASUKKAN WARNA</label>
+                    <input type="color" name="warna" id="warna" value="" />
+                </div>
+                
+                <div>
+                    <button type="submit" onclick="kirim()" class="tombol">
+                    KIRIM</button>
+                </div>
+           
+            </form>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8">
+        let username = document.getElementById('username');
+    let password = document.getElementById('password');
+    let logout = document.getElementById('logout');
+    
+    let NAMA = document.getElementById('NAMA');
+    let PASSWORD = document.getElementById('PASSWORD');
+    let regis = document.getElementById('regis')
+    
+    
+    let login = document.getElementById('login');
+    let button = document.getElementById('button');
+    
+
+    let benar = document.getElementById('benar');
+    let salah = document.getElementById('salah');
+    // let andaBenar = document.getElementById('andaBenar')
+
+    benar.style.display = "none";
+    salah.style.display = "none";
+    logout.style.display = "none";
+    login.style.display = "none";
+
+
+    regis.style.display = "block";
+
+    function kirim() {
+        
+        localStorage.setItem("username", NAMA.value);
+        localStorage.setItem("password", PASSWORD.value);
+    }
+    
+        if(localStorage.getItem("username") && localStorage.getItem("password")){
+            login.style.display = "block";
+            NAMA.style.display = "none";
+            regis.style.display = "none";
+            
+        }
+    </script>
+</body>
+</html>
